@@ -12,10 +12,21 @@ public class Whatever implements Comparable<Whatever> {
     public String getName() {return name;}
     public int getNum() {return num;}
 
-    public int compareTo (Whatever o){
-        if (o == null){
+    public int compareTo (Whatever w){
+        if (w == null){
             return 1;
         }
-        return this.getName().compareTo(o.getName());
+        if (name == null){
+            return -1;
+        }
+        return name.compareTo(w.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "Whatever{" +
+                "name='" + name + '\'' +
+                ", num=" + num +
+                '}';
     }
 }

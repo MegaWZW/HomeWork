@@ -145,21 +145,42 @@ public class DataContainer<T> {
         String str = "[";
         for (T datum : data){
             if (datum != null){
-                str += datum + ", ";
+                str += datum.toString() + ", ";
             }
         }
         return str + "\b\b" +"]";
     }
 
-   //public static <T> void sort (DataContainer<? extends Comparable<?>> container) {
-   //    for (int i = 0; i < container.data.length; i++){
-   //        for (int j = container.data.length - 1; j > i; j--){
-   //            if (container.data[j-1].compareTo(container.data[j]) > 0){
-   //                Comparable tmp = container.data[j-1];
-   //                container.data[j-1] = (Comparable) container.data[j];
-   //                container.data[j] = tmp;
-   //            }
-   //        }
-   //    }
-   //}
+    /**
+     * Сортирует элементы, хранящиеся в поле объета DataContainer
+     * @param container - объект типа DataContainer, должен содержать в своём поле объекты,
+     *                 реализующие интерфейс Comparable
+     * @param <T> - тип сортируемых элементов
+     */
+   public static <T> void sort (DataContainer<? extends Comparable<T>> container) {
+
+       Comparable<T>[] arrObj = container.getItems();
+       for (int i = 0; i < arrObj.length; i++){
+           for (int j = arrObj.length - 1; j > i; j--){
+               if (arrObj[j-1] != null && arrObj[j-1].compareTo((T)arrObj[j]) > 0){
+                   Comparable<T> tmp = arrObj[j-1];
+                   arrObj[j-1] = container.data[j];
+                   arrObj[j] = tmp;
+               }
+           }
+       }
+   }
+
+   public static <T> void sort (DataContainer<T> container, Comparator<T> cmp){
+       T[] arrObj = container.getItems();
+       for (int i = 0; i < arrObj.length; i++){
+           for (int j = arrObj.length - 1; j > i; j--){
+               if (cmp.compare(arrObj[j-1], arrObj[j]) > 0){
+                   T tmp = arrObj[j-1];
+                   arrObj[j-1] = arrObj[j];
+                   arrObj[j] = tmp;
+               }
+           }
+       }
+   }
 }

@@ -1,7 +1,7 @@
 package home_work_4.runners;
 
 import home_work_4.comparators.IntegerComparator;
-import home_work_4.comparators.WhateverComparator;
+import home_work_4.comparators.WhateverNameComparator;
 import home_work_4.container.DataContainer;
 import home_work_4.dto.Whatever;
 
@@ -29,7 +29,7 @@ public class Main1 {
         Comparator<Integer> cmp = new IntegerComparator();
         container.sort(cmp);
         System.out.println(Arrays.toString(container.getItems()));
-        Comparator<Whatever> cmpWhatever = new WhateverComparator();
+        Comparator<Whatever> cmpWhatever = new WhateverNameComparator();
         container2.sort(cmpWhatever);
 
         for (Whatever w : container2.getItems()){
