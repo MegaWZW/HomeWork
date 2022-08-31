@@ -152,7 +152,8 @@ public class DataContainer<T> {
     }
 
     /**
-     * Сортирует элементы, хранящиеся в поле объета DataContainer
+     * Сортирует элементы, хранящиеся в поле объета DataContainer,
+     * используя реализацию сравнения, хранящуюся внутри самих объектов
      * @param container - объект типа DataContainer, должен содержать в своём поле объекты,
      *                 реализующие интерфейс Comparable
      * @param <T> - тип сортируемых элементов
@@ -171,6 +172,13 @@ public class DataContainer<T> {
        }
    }
 
+    /**
+     * Сортирует элементы, хранящиеся в поле объета DataContainer,
+     * используя переданный компаратор
+     * @param container - объект типа DataContainer, содержащий в своём поле массив элементов
+     * @param cmp - объект компаратора
+     * @param <T> - тип сортируемых элементов
+     */
    public static <T> void sort (DataContainer<T> container, Comparator<T> cmp){
        T[] arrObj = container.getItems();
        for (int i = 0; i < arrObj.length; i++){
