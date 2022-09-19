@@ -1,6 +1,5 @@
 package home_work_1;
 
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.Scanner;
 
@@ -25,5 +24,14 @@ public class Task4_5 {
             System.out.println("Вы ввели иной символ");
         }
 
+    }
+
+    public static String letterOrOtherCharacter (char a){
+        if((a >= 65 && a <= 90) || (a >= 97 && a <= 122) ||
+                (a >= 1040 && a <= 1103)) {
+            return "Letter";
+        } else {
+            return "Other character";
+        }
     }
 }

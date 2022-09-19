@@ -1,5 +1,7 @@
 package Home_work_2.arrays;
 
+import Home_work_2.utils.ArraysUtils;
+
 public class ArraysIteration implements IArraysOperation {
     public static void main(String[] args) {
         int[] container = ArraysUtils.arrayFromConsole();

@@ -1,7 +1,7 @@
 package Home_work_2.loops;
 
 public class Task1_2 {
-    public static void main(String[] args) {
+    public String productOfDigitsInNumber (String number) {
 
         double doubleValue;
         long longValue;
@@ -9,30 +9,37 @@ public class Task1_2 {
         String strLongValue;
         int productOfDigits = 1;
 
-        if(args[0].contains(",")){
-            strValue = args[0].replaceAll(",", ".");
+        if(number.contains(",")){
+            strValue = number.replaceAll(",", ".");
         }else {
-            strValue = args[0];
+            strValue = number;
         }
-
+        StringBuilder builder = new StringBuilder();
         try {
             doubleValue = Double.parseDouble(strValue);
             if (doubleValue % 1 != 0) {
-                System.out.println("Введено не целое число");
+                return "Введено не целое число";
             }else {
                 longValue = (long)doubleValue;
                 strLongValue = String.valueOf(longValue);
+
+                boolean needStar = false;
                 for (int i = 0; i < strLongValue.length(); i++) {
                     if(Character.isDigit(strLongValue.charAt(i))) {
                         productOfDigits *= Character.getNumericValue(strLongValue.charAt(i));
-                        System.out.print(strLongValue.charAt(i) + " * ");
+                        if(needStar) {
+                            builder.append(" * ");
+                        } else {
+                            needStar = true;
+                        }
+                        builder.append(strLongValue.charAt(i));
                     }
                 }
-                System.out.print("\b\b");
-                System.out.print("= " + productOfDigits);
+                builder.append(" = ").append(productOfDigits);
             }
         } catch (NumberFormatException e) {
-            System.out.println("Введено не число");
+            return "Введено не число";
         }
+        return builder.toString();
     }
 }

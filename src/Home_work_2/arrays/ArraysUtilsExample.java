@@ -1,5 +1,7 @@
 package Home_work_2.arrays;
 
+import Home_work_2.utils.ArraysUtils;
+
 import java.util.Arrays;
 
 public class ArraysUtilsExample {

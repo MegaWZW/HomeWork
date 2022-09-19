@@ -3,6 +3,13 @@ package home_work_1;
 import java.util.Scanner;
 
 public class Task4_3 {
+
+    public static boolean isDivided(int a, int b){
+
+        if (b == 0) return false;
+        return a % b == 0;
+    }
+
     public static void main(String[] args) {
         Scanner console = new Scanner(System.in);
 

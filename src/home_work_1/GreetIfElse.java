@@ -1,25 +1,19 @@
 package home_work_1;
 
 import java.util.Objects;
-import java.util.Scanner;
 
-public class GreetIfElse {
-    public static void main(String[] args) {
-        System.out.println("Представьтесь!");
+public class GreetIfElse implements ICommunicationPrinter {
 
-        Scanner console = new Scanner(System.in);
-        String name = console.nextLine();
-        console.close();
+    public String welcom(String name) {
 
-        if (!Objects.equals(name, "Вася")){
-            if(!Objects.equals(name, "Анастасия")){
-                System.out.println("Добрый день, а вы кто?");
-            }else {
-                System.out.println("Я тебя так долго ждал");
+        if (!Objects.equals(name, "Вася")) {
+            if (!Objects.equals(name, "Анастасия")) {
+                return "Добрый день, а вы кто?";
+            } else {
+                return "Я тебя так долго ждал";
             }
-        }else {
-            System.out.println("Привет!");
-            System.out.println("Я тебя так догло ждал");
+        } else {
+            return "Привет!\nЯ тебя так долго ждал";
         }
     }
 }

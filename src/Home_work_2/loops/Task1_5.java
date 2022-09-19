@@ -10,7 +10,7 @@ public class Task1_5 {
 
         System.out.println(showTheBiggestDigitOfNumber(73845));
         System.out.println(getChanceOfEvenNumbers(100, 1000));
-        countEvenAndOddDigitsOfNumber(40010000);
+        System.out.println(Arrays.toString(countEvenAndOddDigitsOfNumber(40010000)));
         System.out.println(Arrays.toString(fibonacciSequence(10)));
         System.out.println(Arrays.toString(numbersOverGaps(10,35,5)));
         System.out.println(reverseNumber(987645698456L));
@@ -52,13 +52,14 @@ public class Task1_5 {
     }
 
     /**
-     * Посчитывает четные и нечетные цифры числа
+     * Подсчитывает четные и нечетные цифры числа
      * @param number - число, чётные и нечётные цифры которого, необходимо подсчитать
-     * Метод распечатывает в консоль результат операции
+     * Метод, возвращает массив, где первый элемент - количество чётных цифр в числе, а второй - нечётных
      */
-    public static void countEvenAndOddDigitsOfNumber (int number) {
+    public static int[] countEvenAndOddDigitsOfNumber (int number) {
         int oddCounter = 0;
         int evenCounter = 0;
+        int[] count = new int[2];
         String strNumber = Integer.toString(number);
         for (int i = 0; i < strNumber.length(); i++) {
             if (Character.getNumericValue(strNumber.charAt(i)) % 2 == 0) {
@@ -67,7 +68,9 @@ public class Task1_5 {
                 oddCounter++;
             }
         }
-        System.out.printf("Число %d содержит %d чётных чисел и %d нечётных цифр\n", number, evenCounter, oddCounter);
+        count[0] = evenCounter;
+        count[1] = oddCounter;
+        return count;
     }
 
     /**

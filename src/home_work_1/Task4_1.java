@@ -16,4 +16,8 @@ public class Task4_1 {
             System.out.println("Введённое число нечётное");
         }
     }
+
+    public static boolean isOdd (int a){
+        return a % 2 != 0 ? true : false;
+    }
 }

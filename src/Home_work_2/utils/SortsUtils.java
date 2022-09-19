@@ -1,4 +1,4 @@
-package Home_work_2.sorts;
+package Home_work_2.utils;
 
 public class SortsUtils {
 

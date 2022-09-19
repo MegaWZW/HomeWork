@@ -3,6 +3,15 @@ package home_work_1;
 import java.util.Scanner;
 
 public class Task4_4 {
+
+    public static double bitesToKilobites(double b) {
+        return b / 1024D;
+    }
+
+    public static int kilobitesToBites(int kb) {
+        return kb * 1024;
+    }
+
     public static void main(String[] args) {
 
         Scanner console = new Scanner(System.in);

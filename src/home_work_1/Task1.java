@@ -36,4 +36,12 @@ public class Task1 {
          */
 
     }
+
+    public static int bitwiseAnd (int a, int b){
+        return a & b;
+    }
+
+    public static int bitwiseOr (int a, int b){
+        return a | b;
+    }
 }

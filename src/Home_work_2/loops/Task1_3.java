@@ -29,4 +29,12 @@ public class Task1_3 {
             System.out.printf("%.2f ^ %d = %.2f", number, pow, result);
         }
     }
+
+    public double pow (double n, int a) {
+        double result = 1.0;
+        for (int i = 0; i < a; i++) {
+            result *= n;
+        }
+        return result;
+    }
 }
