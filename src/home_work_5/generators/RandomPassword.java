@@ -2,26 +2,22 @@ package home_work_5.generators;
 
 import java.util.Random;
 
-public class RandomEngCharStringGenerator implements IGenerator {
+public class RandomPassword implements IGenerator {
 
     private int length;
 
-    public RandomEngCharStringGenerator(int length){
-        this.length = length;
-    }
-
-    public RandomEngCharStringGenerator() {
+    public RandomPassword() {
         Random rnd = new Random();
-        this.length = rnd.nextInt(50) + 1;
+        this.length = rnd.nextInt(6) + 5;
     }
 
     @Override
     public String generate() {
-        String str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String str= "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
         for(int i = 0; i < this.length; i++){
-            int number = random.nextInt(52);
+            int number = random.nextInt(69);
             sb.append(str.charAt(number));
         }
         return sb.toString();

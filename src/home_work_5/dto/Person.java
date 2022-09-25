@@ -4,11 +4,16 @@ import home_work_5.exceptions.InvalidPasswordLengthException;
 
 import java.util.Objects;
 
-public class Person {
+public class Person implements Comparable<Person>{
 
     private String nick;
     private String password;
     private String name;
+
+    @Override
+    public int compareTo(Person o) {
+        return this.name.compareTo(o.getNick());
+    }
 
     public Person(String nick, String password, String name) {
         if ((password.length() <= 10) && (password.length() >= 5)) {

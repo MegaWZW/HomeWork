@@ -12,7 +12,7 @@ public class RandomStringGenerator implements IGenerator {
 
     public RandomStringGenerator() {
         Random rnd = new Random();
-        this.length = rnd.nextInt(51);
+        this.length = rnd.nextInt(50) + 1;
     }
 
     @Override

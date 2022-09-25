@@ -12,7 +12,7 @@ public class RandomRusCharStringGenerator implements IGenerator {
 
     public RandomRusCharStringGenerator() {
         Random rnd = new Random();
-        this.length = rnd.nextInt(51);
+        this.length = rnd.nextInt(50) + 1;
     }
 
     @Override

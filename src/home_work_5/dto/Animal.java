@@ -4,10 +4,15 @@ import home_work_5.exceptions.InvalidAgeException;
 
 import java.util.Objects;
 
-public class Animal {
+public class Animal implements Comparable<Animal> {
 
     private int age;
     private String nick;
+
+    @Override
+    public int compareTo(Animal o) {
+        return this.nick.compareTo(o.getNick());
+    }
 
     public Animal(int age, String nick) {
         if (age >= 1 && age <= 15) {
