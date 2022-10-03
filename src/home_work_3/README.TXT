@@ -23,11 +23,11 @@
 Задание 9 - класс additional.CalculatorWithCounterAutoChoiceAgregation
             класс runners.CalculatorWithCounterDelegateChoiceAgregationMain
 
-Задание 10 - интерфейс api.ICalculator
+Задание 10 - интерфейс home_work_pizza.api.ICalculator
 
 Задание 11 - класс additional.CalculatorWithCounterAutoAgregationInterface
              класс runners.CalculatorWithCounterAutoCompositeInterfaceMain
 
 Задание 12 - класс additional.CalculatorWithMemory
-             класс api.Memory
+             класс home_work_pizza.api.Memory
              класс runners.CalculatorWithMemoryMain
