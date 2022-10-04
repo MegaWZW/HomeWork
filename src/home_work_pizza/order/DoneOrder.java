@@ -9,11 +9,16 @@ import java.util.List;
 
 public class DoneOrder implements IDoneOrder {
     private ITicket ticket;
-    private List<IPizza> pizzaList;
+
+    private List<IPizza> list = new ArrayList<>();
 
     public DoneOrder(ITicket ticket) {
         this.ticket = ticket;
-        this.pizzaList = new ArrayList<>();
+        for (int i = 0; i < ticket.getOrder().getSelected().size(); ++i) {
+            for (int j = 0; j < ticket.getOrder().getSelected().get(i).getCount(); ++j) {
+                list.add(new Pizza(ticket.getOrder().getSelected().get(i)));
+            }
+        }
     }
 
     @Override
@@ -23,13 +28,13 @@ public class DoneOrder implements IDoneOrder {
 
     @Override
     public List<IPizza> getItems() {
-        return pizzaList;
+        return list;
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        for (IPizza pizza : pizzaList){
+        for (IPizza pizza : list){
             builder.append(pizza.toString());
         }
         return builder.toString();

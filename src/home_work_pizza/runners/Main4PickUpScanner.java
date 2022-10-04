@@ -67,7 +67,7 @@ public class Main4PickUpScanner {
          */
         Scanner sc = new Scanner(System.in);
         int stageNumber = 1;
-        while (orderStatus.isDone() == false) {
+        while (!orderStatus.isDone()) {
             System.out.println("Для перехода к следующему этапу заказа нажмите '1'");
             int choice = sc.nextInt();
             if (choice == 1){
@@ -85,15 +85,6 @@ public class Main4PickUpScanner {
 
         //создаём готовый заказ
         IDoneOrder doneOrder = pizzeria.pickup(ticket);
-        if (orderStatus.isDone() == true) {
-
-            for(int i = 0; i < choice1.getCount(); i++) {
-                doneOrder.getItems().add(new Pizza(choice1));
-            }
-            for (int i = 0; i < choice2.getCount(); i++){
-                doneOrder.getItems().add(new Pizza(choice2));
-            }
-        }
         System.out.println("Забирайте заказ: \n" + doneOrder);
     }
 
