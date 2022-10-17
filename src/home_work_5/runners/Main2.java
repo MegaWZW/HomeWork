@@ -9,7 +9,7 @@ public class Main2 {
     public static void main(String[] args) {
         String nick = "";
 
-        try(BufferedReader reader = new BufferedReader(new FileReader("person_names.txt"))) {
+        try(BufferedReader reader = new BufferedReader(new FileReader("HomeWork\\person_names.txt"))) {
             nick = reader.readLine();
         }catch (IOException e) {
             System.out.println("File not found");
