@@ -39,4 +39,11 @@ public class EasySearchTest {
         Assertions.assertEquals(1, s.search("бабушка бабушке бабушку!", "бабушке"));
         Assertions.assertEquals(1, s.search("бабушка бабушке бабушку!", "бабушку"));
     }
+
+    @Test
+    public void searchTest6() {
+        RegExSearch s = new RegExSearch();
+        Assertions.assertEquals(1, s.search("привет", "привет"));
+
+    }
 }
